@@ -44,9 +44,11 @@ do
 done
 
 if [ $i_flag -eq 1 ]; then
+  # shellcheck disable=SC2086
   apt-get install ${package}
   update-locale LANG=ja_JP.UTF8
   dpkg-reconfigure tzdata
 elif [ $u_flag -eq 1 ]; then
+  # shellcheck disable=SC2086
   apt-get purge ${package}
 fi
